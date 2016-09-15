@@ -29,7 +29,7 @@ Here we see the available nodes, just one in our case. Kubernetes will choose wh
 Let’s run our first app on Kubernetes with the kubectl run command. The run command creates a new deployment.
 
 ```bash
-kubectl run hellonode --image=docker.io/jocatalin/hellonode:v1 --port=8080 
+kubectl run hellonode --image=docker.io/icrosby/tinyping:v1 --port=8080 
 
 deployment "hellonode" created
 ```

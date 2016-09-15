@@ -14,7 +14,7 @@ In this lab you will create the `k8s-hello-world` service and "expose" the `k8s-
 Explore the k8s-hello-world service configuration file:
 
 ```
-cat services/k8s-hello-world.yaml
+cat service.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -44,7 +44,11 @@ kubectl create -f service.yaml
 ### Interact with the k8s-hello-world Service Remotely
 
 ```
-curl -k http://$(minikube ip):30080
+curl http://$(minikube ip):30080
+```
+OR
+```bash
+minikube service k8s-hello-world
 ```
 
 ----
@@ -73,12 +77,5 @@ With the `kubectl label` command you can add labels like `secure=disabled` to a 
 
 ```
 kubectl label pods k8s-hello-world 'secure=disabled'
-```
-
-----
-
-View the list of endpoints on the `k8s-hello-world` service:
-
-```
-kubectl describe services k8s-hello-world
+kubectl describe pods k8s-hello-world
 ```

@@ -3,10 +3,10 @@ kind: Pod
 metadata:
   name: k8s-hello-world
   labels:
-    app: k8s-hello-world
+    name: k8s-hello-world
 spec:
   containers:
     - name: k8s-hello-world
-      image: muellermich/nodejs-hello
+      image: icrosby/tinyping:v1
       ports:
         - containerPort: 8080

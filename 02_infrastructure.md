@@ -43,9 +43,10 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.8.0/miniku
 
 ### Start minikube  
 `minikube start`
+
 `kubectl cluster-info`
 
-### ssh into the VM
+ssh into the VM
 
 ```bash
 minikube ssh

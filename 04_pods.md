@@ -25,7 +25,7 @@ metadata:
 spec:
   containers:
     - name: k8s-hello-world
-      image: muellermich/nodejs-hello
+      image: icrosby/tinyping:v1
       ports:
         - containerPort: 8080
 ```
@@ -46,18 +46,18 @@ kubectl get pods
 ```
 
 ```
-kubectl describe pods <pod-name>
+kubectl describe pods k8s-hello-world
 ```
 
 ----
 
 ### Quiz
 
-* What is the IP address of the `monolith` Pod?
-* What node is the `monolith` Pod running on?
-* What containers are running in the `monolith` Pod?
-* What are the labels attached to the `monolith` Pod?
-* What arguments are set on the `monolith` container?
+* What is the IP address of the `k8s-hello-world` Pod?
+* What node is the `k8s-hello-world` Pod running on?
+* What containers are running in the `k8s-hello-world` Pod?
+* What are the labels attached to the `k8s-hello-world` Pod?
+* What arguments are set on the `k8s-hello-world` container?
 
 ----
 
@@ -94,5 +94,5 @@ kubectl logs k8s-hello-world
 Use the `kubectl exec` command to run an interactive shell inside the `k8s-hello-world` Pod:
 
 ```
-kubectl exec monolith --stdin --tty -c k8s-hello-world /bin/sh
+kubectl exec k8s-hello-world --stdin --tty -c k8s-hello-world /bin/sh
 ```

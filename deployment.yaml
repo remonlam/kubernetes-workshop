@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-hello-world
+  labels:
+    name: k8s-hello-world
+spec:
+  replicas: 5
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        name: k8s-hello-world
+    spec:
+      containers:
+        - name: k8s-hello-world
+          image: icrosby/tinyping:v1
+          ports:
+            - containerPort: 8080
