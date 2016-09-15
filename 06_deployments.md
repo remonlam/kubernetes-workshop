@@ -1,9 +1,9 @@
 ###Perform Rolling Update
 
-Verfiy service is available
+Remove old pod
 
 ```
-curl $(minikube ip):30080/
+kubectl delete pods k8s-hello-world
 ```
 
 ----
@@ -27,6 +27,20 @@ Watch new pods created: `kubectl get pods`
 
 ----
 
+### Call service
+
+```
+curl $(minikube ip):30080/
+```
+
+or
+
+```
+minikube service k8s-hello-world
+```
+
+----
+
 ### Rolling update
 
 ```bash
@@ -34,7 +48,7 @@ kubectl set image deployment/k8s-hello-world k8s-hello-world=icrosby/tinyping:v2
 kubectl rollout status deployment/k8s-hello-world
 ```
 watch status + ping service (curl or browser)
-`curl $(minikube ip):[NodePort]/`
+`curl $(minikube ip):30080//`
 
 ----
 

@@ -27,7 +27,7 @@ spec:
     targetPort: 8080
     nodePort: 30080
   selector:
-    app: k8s-hello-world
+    name: k8s-hello-world
 ```
 type: NodePort is needed as we don't have a integrated loadbalancer
 
@@ -70,7 +70,7 @@ kubectl describe services k8s-hello-world
 One way to troubleshoot an issue is to use the `kubectl get pods` command with a label query.
 
 ```
-kubectl get pods -l "app=k8s-hello-world"
+kubectl get pods -l "name=k8s-hello-world"
 ```
 
 With the `kubectl label` command you can add labels like `secure=disabled` to a Pod.
